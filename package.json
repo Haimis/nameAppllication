@@ -1,0 +1,11 @@
+{
+  "name": "nameapp",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "postinstall": "cd backend && npm install",
+    "start": "cd backend && node index.js"
+  },
+  "author": "Mikko Haimila",
+  "license": "ISC"
+}
