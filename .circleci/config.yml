@@ -5,6 +5,4 @@ orbs:
 workflows:
   heroku_deploy:
     jobs:
-      - heroku/deploy-via-git:
-          pre-steps:
-            - run: npm start
+      - heroku/deploy-via-git
