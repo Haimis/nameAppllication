@@ -45,13 +45,15 @@ const NameList = (props) => {
 
         return n
       })
-    
-      setNames(newNames)
+
       setShowBtn(false)
       setFadeIn(true)
       setTimeout(() => {
-        setFadeIn(false)
+        setFadeIn(false) 
       }, 10000)
+      setTimeout(() => {
+        setNames(newNames)    
+      }, 3000)
     }
 
 
@@ -105,11 +107,20 @@ const NameList = (props) => {
                 </th>
               </tr>
               {showNames.map(name =>
+              fadeIn && name.name === 'Mikko' ? 
+              <tr class="high" key={name.name}>
+              <td>{name.name}</td>
+              <td>
+                {name.amount} +1
+    
+              </td>
+            </tr>              
+              :
                 <tr key={name.name}>
                   <td>{name.name}</td>
                   <td>{name.amount}</td>
                 </tr>
-              )}
+            )}
           </thead>
         </Table>
         </Container>
