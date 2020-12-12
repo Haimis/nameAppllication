@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
+    "build:ui": "rm -rf backend/build && cd frontend && npm run build && cp -r build ../backend/",
     "postinstall": "cd backend && npm install",
     "start": "cd backend && node index.js"
   },
