@@ -1,0 +1,15 @@
+table, tr {
+    table-layout: fixed;
+    width: 40%;
+    border-collapse: collapse;
+    border: 2px solid rgb(40, 127, 185);
+    
+  }
+
+th {
+  background-color:  rgb(98, 148, 182);
+}
+  
+td {
+  max-width: 100%;
+}
