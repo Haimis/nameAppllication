@@ -8,7 +8,7 @@ app.use(express.static('build'))
 
 const names = require('./names.json')
 
-app.get('/api/names', (request, response ) => {
+app.get('/api/names', (req, res ) => {
     res.json(names)
 })
 
