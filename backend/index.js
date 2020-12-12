@@ -1,14 +1,19 @@
-const http = require('http')
+const express = require('express')
+const app = express()
+
+const cors = require('cors')
+app.use(cors())
+app.use(express.json())
+app.use(express.static('build'))
+
 const names = require('./names.json')
 
-
-
-const app = http.createServer((request, response) => {
-    response.writeHead(200, {'Content-Type': 'text/plain'})
-    response.end(JSON.stringify(names))
-
+app.get('/api/names', (request, response ) => {
+    res.json(names)
 })
 
+
 const PORT = process.env.PORT || 3001
+
 app.listen(PORT)
 console.log(`Server is running at port ${PORT}`)
