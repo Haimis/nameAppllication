@@ -2,7 +2,35 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@1.2.3
   node: circleci/node@3.0.0
+jobs:
+  npm-install:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: root npm install
+          command: npm install
+  lint:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: check linting
+          command: npm run lint
+  build-frontend:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: build
+          command: npm run build:ui
+
 workflows:
   heroku_deploy:
     jobs:
+      - npm-install
+      - build-frontend
       - heroku/deploy-via-git
