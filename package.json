@@ -5,7 +5,7 @@
   "scripts": {
     "build:ui": "rm -rf backend/build && cd frontend && npm run build && cp -r build ../backend/ && rm -rf build",
     "postinstall": "cd backend && npm install && cd ../frontend && npm install",
-    "lint": "node_modules/.bin/eslint frontend/src/*.js && node_modules/.bin/eslint backend/*.js",
+    "lint": "node_modules/.bin/eslint frontend/ && node_modules/.bin/eslint backend/",
     "start": "cd backend && node index.js"
   },
   "author": "Mikko Haimila",
