@@ -34,5 +34,6 @@ workflows:
   heroku_deploy:
     jobs:
       - lint
+      - test frontend
       - heroku/deploy-via-git
       - codecov
