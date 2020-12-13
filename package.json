@@ -11,6 +11,7 @@
   "author": "Mikko Haimila",
   "license": "ISC",
   "devDependencies": {
+    "codecov": "^3.8.1",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
