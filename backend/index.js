@@ -1,18 +1,18 @@
-const express = require('express')
-const app = express()
+const express = require('express');
 
-const cors = require('cors')
-app.use(express.json())
-app.use(express.static('build'))
+const app = express();
 
-const names = require('./names.json')
+const cors = require('cors');
 
-app.get('/api/names', cors(), (req, res ) => {
-    res.json(names)
-})
+app.use(express.json());
+app.use(express.static('build'));
 
+const names = require('./names.json');
 
-const PORT = process.env.PORT || 3001
+app.get('/api/names', cors(), (req, res) => {
+  res.json(names);
+});
 
-app.listen(PORT)
-console.log(`Server is running at port ${PORT}`)
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT);
