@@ -1,7 +1,5 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const getAll = () => {
-    return axios.get('/api/names')
-}
+const getAll = () => axios.get('http://localhost:3001/api/names');
 
-export default { getAll }
+export default getAll;
