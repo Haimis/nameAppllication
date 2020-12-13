@@ -14,9 +14,17 @@ jobs:
       - run:
           name: lint
           command: npm run lint
+  codecov:
+    executor:
+      name: node/default
+    steps:
+    - checkout
+    - run:
+      name: upload report
+      command: bash <(curl -s https://codecov.io/bash)
 workflows:
   heroku_deploy:
     jobs:
       - lint
       - heroku/deploy-via-git
-      
+      - codecov
