@@ -3,7 +3,7 @@ orbs:
   heroku: circleci/heroku@1.2.3
   node: circleci/node@3.0.0
 jobs:
-  lint:
+  test:
     executor:
       name: node/default
     steps:
@@ -14,26 +14,11 @@ jobs:
       - run:
           name: lint
           command: npm run lint
-  test frontend:
-    executor:
-      name: node/default
-    steps:
-      - checkout
       - run:
           name: test frontend
           command: cd frontend/ && npm run test
-  codecov:
-    executor:
-      name: node/default
-    steps:
-    - checkout
-    - run:
-        name: upload report
-        command: bash <(curl -s https://codecov.io/bash)
 workflows:
   heroku_deploy:
     jobs:
-      - lint
-      - test frontend
+      - test
       - heroku/deploy-via-git
-      - codecov
